@@ -8,6 +8,7 @@ def max_consective_ones_k_flips(arr,k):
         for j in range(i,n):
             if arr[j] == 0:
                 zero_count += 1
+                
             if zero_count <= k:
                 max_len = max(max_len,j-i+1)
     return max_len
