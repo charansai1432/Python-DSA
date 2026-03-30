@@ -31,7 +31,7 @@ def maximum_sum_subarray_atleast_k_elements(arr,k):
 print(maximum_sum_subarray_atleast_k_elements([1,2,3,-10,4,5],2))  #9
     
     
-# optimal solution 
+# optimal solution (NOT DONE THIS QUESTION OPTIMAL ONE)
 
 def maximum_sum_subarray_atleast_k_elements(arr,k):
     n = len(arr)
