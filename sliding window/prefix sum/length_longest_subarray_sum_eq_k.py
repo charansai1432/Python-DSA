@@ -33,7 +33,7 @@ def length_longest_subarray_sum_eq_k(arr,k):
             cur_len= i- freq[past_sum]
             max_len = max(max_len,cur_len)
 
-        if cur_sum not in freq:     # here this condition we definately has to be returned in the question like count,length subarray questions because here we are finding the earliest possible subarray count or longest subarray(sum) == k 
+        if cur_sum not in freq:     # here this condition we definately has to be returned in the question like not in count problems ,length subarray questions because here we are finding the earliest possible subarray count or longest subarray(sum) == k 
             freq[cur_sum] = i           # here we are not storing the sum frequnecy here are just storing the index of the cur_sum
             
     return max_len

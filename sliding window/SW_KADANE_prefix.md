@@ -21,7 +21,7 @@ If a question mentions some thing like absoulte diff <= k  (dont assume it is a 
 it is variable Sw technique because Here they didnot mention the window size okk i.e (varaible SW using Deque technique we solve the problem )
 
 
-<KADANE ALGO >  -- It is a optimization technique that can be used in atmost k elements look similarly like an varaible SW but not 
+<KADANE ALGO >  -- It is a optimization technique that can be used in atmost k elements look similarly like an varaible SW but not due to -ve elements.
 
         - used mainly if a array contain -ve elements
         - question having the maximum,minimum subarray sum if a question contain something like this 
