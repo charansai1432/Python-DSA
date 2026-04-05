@@ -6,7 +6,8 @@
                                     # That means we have in this variable size SW + kadane's algo approach we have to solve 
 
 
-#imp => by default whenever we this question ==> brain goes to the varaibale SW with sum invalid condition but here they didnot given sum condtion ok 
+#imp => by default whenever we see  this question ==> brain goes to the varaibale SW with sum invalid condition but here they didnot given sum condtion ok 
+
 # so this is a kadane algo question we took the size condition as invalid ==> imp
 
 
