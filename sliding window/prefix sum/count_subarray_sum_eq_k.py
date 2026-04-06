@@ -4,12 +4,15 @@
 # 👉 Question:
 # How many subarrays have sum = 2?
 
-
+#optimal approach 
 def count_subarrays_sum_eq_k(arr,k):
     cur_sum = 0
     count = 0
-    freq = {0:1}        #in this question to count the subarray's we store the hashmap with respective to the sum and hwo many times the sum is repeated {0:1} i.e sum zero has appread once 
-                        # and we taking  that {0:1} at start 
+    freq = {0:1}    # IN {sum : how many times it repeated } ==> intitally sum = 0 repeated once (1) we assumed that (EDGE CASE)
+                        #in this question to count the subarray's we store the hashmap with respective to the sum and hwo many times the sum is repeated {0:1} i.e sum zero has appread once 
+                       # and we taking  that {0:1} at start 
+                       
+    #  freq = {}        # if we take like this Then the sub array at sum = 0 (is missed)    (SO CONSISTENT HAPPENS WE LOOSE THAT SUB ARRAY)                 
     n = len(arr)
     
     for i in range(n):

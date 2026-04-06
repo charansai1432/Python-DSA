@@ -21,10 +21,12 @@
 
 # now the question is 
 
+
+#oprimal approach
 def length_longest_subarray_sum_eq_k(arr,k):
     cur_sum = 0
     max_len = 0
-    freq = {0:-1}
+    freq = {0:-1}          # “Before the array starts (at index -1), the prefix sum is 0” i.e {sum:-1(position of index)}
     for i in range(len(arr)):
         cur_sum += arr[i]
         past_sum = cur_sum - k
@@ -33,7 +35,8 @@ def length_longest_subarray_sum_eq_k(arr,k):
             cur_len= i- freq[past_sum]
             max_len = max(max_len,cur_len)
 
-        if cur_sum not in freq:     # here this condition we definately has to be returned in the question like not in count problems ,length subarray questions because here we are finding the earliest possible subarray count or longest subarray(sum) == k 
+        if cur_sum not in freq:
+            # here this condition we definately has to be returned in the question like not in count problems ,length subarray questions because here we are finding the earliest possible subarray count or longest subarray(sum) == k 
             freq[cur_sum] = i           # here we are not storing the sum frequnecy here are just storing the index of the cur_sum
             
     return max_len

@@ -17,11 +17,11 @@ def maximum_sum_subarray_atmost_k_elements(arr,k):
     max_sum = 0
     n = len(arr)
     for i in range(n):
-        w_sum = 0
+        cur_sum = 0
         for j in range(i,n):
-            w_sum += arr[j]
+            cur_sum += arr[j]
             if (j-i+1) <= k:
-                max_sum = max(max_sum,w_sum)
+                max_sum = max(max_sum,cur_sum)
     return max_sum
 print(maximum_sum_subarray_atmost_k_elements([2, -1, 3, -2, 4],3))  #5
 
@@ -32,15 +32,15 @@ def max_sum_subarray_atmost_k_elements(arr,k):
     
     l = 0 
     max_sum = 0
-    w_sum = 0
+    cur_sum = 0
     for r in range(len(arr)):
         w_sum += arr[r]
         
         while (r-l+1) > k:
-            w_sum -= arr[l]
+            cur_sum -= arr[l]
             l+=1
             
-        max_sum = max(max_sum,w_sum)
+        max_sum = max(max_sum,cur_sum)
     return max_sum
 
   

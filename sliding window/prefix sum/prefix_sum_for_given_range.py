@@ -1,4 +1,4 @@
-
+#optimal approach
 def prefix_sum_for_given_range(arr):
     
     p_sum = arr[0]
