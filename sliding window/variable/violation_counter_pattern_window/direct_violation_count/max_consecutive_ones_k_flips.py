@@ -15,6 +15,7 @@ def max_consective_ones_k_flips(arr,k):
 print(max_consective_ones_k_flips([1,1,1,0,0,0,1,1,1,1,0],2))   #6
 
 
+
 #optimal solution 
 
 def max_consective_one_k_flips(arr,k):
