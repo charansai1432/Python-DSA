@@ -19,7 +19,7 @@
 
 
 ####################
-#############        BRUTE FORCE APPROACH ############
+#############    BRUTE FORCE APPROACH     ############
 
 def squares_of_sorted_array(arr):
     
@@ -33,4 +33,29 @@ def squares_of_sorted_array(arr):
 print(squares_of_sorted_array([-4, -1, 0, 3, 10]))
 
 
-# optimal solution 
+# optimal solution   
+
+# Here in the question they asked for the sorted array that means ascending order 
+# that's why we used the pos = -1 which helps to  insert the bigger square from the ending of the list 
+# here if i use the pos = 0 and pos += 1 which cause the array in the descending order after that we have to sort the array to acheive what asked in the question 
+# so pos = 0 and pos += 1 which causes the elements to insert from the beginning 
+
+def squares_of_sorted_array(arr):
+    n = len(arr)
+    l = 0
+    r = n - 1
+    pos = -1
+    result = [0]*n
+    
+    while l <= r:
+        if abs(arr[l]) > abs(arr[r]):
+            
+            result[pos] = arr[l]**2
+            l += 1
+        else:
+            result[pos] = arr[r]**2
+            r -= 1
+        pos -= 1
+        
+    return result
+print(squares_of_sorted_array([-4, -1, 0, 3, 10]))      #TC => O(n)
