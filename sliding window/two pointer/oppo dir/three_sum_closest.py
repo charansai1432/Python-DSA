@@ -27,26 +27,30 @@ print(three_sum_closest([-1,2,1,-1],1))             #2
 # optimal solution approach 
 
 def three_sum_closest(arr,target):
+
     n = len(arr)
     closest = float('inf')
     arr.sort()
-    
+
     for i in range(n-2):
         l = i + 1
         r = n - 1
+
         total = arr[i]+arr[l]+arr[r]
+
         if abs(target - total) < abs(target - closest):
             closest = total
-            
+
         if total < target:
             l+=1
-            
+
         elif total > target:
             r -= 1
-            
+
         else:
             return total            # when exact match i.e when total = closest i think not exactly
-            
+
     return closest
 
 print(three_sum_closest([-1,2,1,-4],1))             #2
+
