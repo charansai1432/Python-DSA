@@ -24,7 +24,11 @@ def count_subarrays_with_eq_0s_and_1s(arr):
     n = len(arr)
     
     for i in range(n):
-        cur_sum += arr[i]
+        
+        if arr[i] == 0:
+            cur_sum += -1
+        else:
+            cur_sum += 1
         
         if cur_sum in freq:
             count += freq[cur_sum]
