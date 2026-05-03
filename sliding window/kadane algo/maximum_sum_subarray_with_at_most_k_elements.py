@@ -34,7 +34,7 @@ def max_sum_subarray_atmost_k_elements(arr,k):
     max_sum = 0
     cur_sum = 0
     for r in range(len(arr)):
-        w_sum += arr[r]
+        cur_sum += arr[r]
         
         while (r-l+1) > k:
             cur_sum -= arr[l]
