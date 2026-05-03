@@ -10,7 +10,7 @@ def container_with_most_water(heights):
     n = len(heights)
     max_water = 0
     for i in range(n):
-        for j in range(i+1,n):
+        for j in range(i,n):
             width = j - i
             min_height = min(heights[i],heights[j])
             area = width*min_height
