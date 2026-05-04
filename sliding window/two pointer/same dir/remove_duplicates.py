@@ -12,3 +12,6 @@ def remove_duplicates(arr):
     return uniq
 print(remove_duplicates([1,1,2,3,4,5]))
 
+
+
+
