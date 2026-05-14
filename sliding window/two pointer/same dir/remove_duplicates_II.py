@@ -23,7 +23,7 @@ print(remove_duplicates([1,1,1,2,2,3]))
 # optimal solution using the fast & slow pointers
 
 def remove_duplicates(arr):
-    slow = 2                                    # first two elements are always valid 
+    slow = 2                                    # first two elements are always valid i.e the 1st 2 are always unique
     for fast in range(2,len(arr)):
         if arr[fast] != arr[slow-2]:
             arr[slow] = arr[fast]
