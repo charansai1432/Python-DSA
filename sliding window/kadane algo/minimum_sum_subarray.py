@@ -11,7 +11,7 @@
 
 #brute force approach
 def minimum_sum_subarray(arr):
-    min_sum =0
+    min_sum =float('inf')
     cur_sum = 0
     for i in range(len(arr)):
         for j in range(i,len(arr)):
@@ -24,7 +24,7 @@ print(minimum_sum_subarray([3,-4,2,-3,-1,7,-5]))    #-6
 #optimal approach
 
 def minimum_sum_subarray(arr):
-    min_sum = 0
+    min_sum = float('inf')
     
     cur_sum = 0
     for i in arr:

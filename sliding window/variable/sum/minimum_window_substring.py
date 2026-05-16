@@ -150,14 +150,19 @@ def minimum_window_substring(s,t):
         freq[s[r]] = freq.get(s[r],0)+1
         
         valid = True 
+        
         while True:                    # we dont when we can able to get the min_len substring so iterate over the string until a valid min_len is found 
             
             # check for the valid string 
             for char in t_count:
-                if freq[char] < t_count[char]:
+                if freq[char] < t_count[char]:      # for invalid string logic 
                     valid = False
                     break 
-                
+                # ok for suppose if 1 char have freq = 0 then that means 0 < 1 condition is true then valid = false break from the for loop now 
+                # now It will check in the if not false => True => if codition is true => break which eventually exits from the current substring loop no more shirnking because already the substring doesnt have the required chars even if we shrink we cannot the required no. of char presnt in the 't' string
+            
+            
+            # below if valid is used for invalid string and valid string too 
             if not valid:       # if valid = True => then not valid is False ==> that means if condition is False 
                                     # then we find a valid string now we have to check for the min_len string if min_len is found in substring  then return the answer
                 break
@@ -176,10 +181,49 @@ def minimum_window_substring(s,t):
             l+= 1
             
     return answer,min_len
+# print(minimum_window_substring("ADOBECODEBANC", "ABC"))
+
+# the above approach will make into the time complexity of O(n*m) = > n = len(s) and m = len(t)
+
+# In simple terms  here we check every time entire hashmap for every substring which the makes the time complexity even more 
+
+############################ O(N) ############## approach 
+# so the best approach is maintaing the have and need technique which makes the time complexity as O(n)
+
+# optimal solution with O(n) technique
+
+def minimum_window_substring(s,t):
+    n = len(s)
+    min_len = float('inf')
+    answer = ""
+    have = 0
+    from collections import Counter
+    t_count = Counter(t)
+    need = len(t_count)         # which gives 
+    freq = {}
+    l = 0
+    for r in range(n):
+        freq[s[r]] = freq.get(s[r],0)+1
+        
+        # check for validity   # it's the condition for the valid window
+        if s[r] in t_count and freq[s[r]] == t_count[s[r]]:
+            have += 1
+        
+        while have == need:
+            win_len = r - l + 1
+            if win_len < min_len:
+                min_len = win_len
+                answer = s[l:r+1]
+            
+            freq[s[l]] -= 1
+            
+            if s[l] in t_count and freq[s[l]] <t_count[s[l]]:        # for invalid window checking condition 
+                have -= 1
+            l+=1
+    return answer,min_len
 print(minimum_window_substring("ADOBECODEBANC", "ABC"))
 
-            
-                
+                        
     
     
 

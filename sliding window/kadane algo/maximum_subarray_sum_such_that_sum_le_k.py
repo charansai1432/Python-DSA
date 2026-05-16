@@ -61,10 +61,11 @@ def maximum_sum_subarray_sum_lessthan_eq_k(arr,k):
         
         idx = bisect.bisect_left(sorted_arr,target)    # find the smallest prefix >= target
         
+        bisect.insort(sorted_arr,cur_sum) 
+        
         if idx < len(sorted_arr):
             max_sum = max(max_sum,cur_sum - sorted_arr[idx])      # valid subarray sum <=k
-            
-        bisect.insort(sorted_arr,cur_sum)       # insert the cur_sum into the sorted_arr
+                  # insert the cur_sum into the sorted_arr
         
     return max_sum 
 

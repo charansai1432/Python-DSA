@@ -32,13 +32,38 @@ def longest_subarray_with_sum_lessthan_eq_k(arr,k):
         target = prefix - k             # same as the maximum sum subarray of sum <= k 
                                         # in simple terms minimum prefix we need == target 
                                         
-                                        
+        bisect.insort(sorted_prefix,(prefix,i))             # store current prefix + index in the sorted_prefix
+        
         for p,idx in sorted_prefix:     # find first_prefix >= target
+            
             if p >= target:
-                max_len = max(max_len,i-idx)        #length = current index - previous index 
+                cur_len = i - idx 
+                max_len = max(max_len,cur_len) #length = current index - previous index 
                 break                         #why break ??        # sorted_prefix is sorted i.e first_valid_prefix is found == best choice
         
-        bisect.insort(sorted_prefix,(prefix,i))             # store current prefix + index in the sorted_prefix 
+         
+    return max_len
+print(longest_subarray_with_sum_lessthan_eq_k([2,2,-1],3))
+        
+
+
+# ooptimal solution 
+
+
+def longest_subarray_with_sum_lessthan_eq_k(arr,k):
+    max_len = 0
+    cur_prefix = 0
+    n = len(arr)
+    sorted_past_prefix_records = [(0,-1)]
+    for i in range(n):
+        cur_prefix += arr[i]
+        target = cur_prefix - k
+        idx = bisect.bisect_left(sorted_past_prefix_records,(target,float('-inf')))
+        bisect.insort(sorted_past_prefix_records,(cur_prefix,i))
+        if idx < len(sorted_past_prefix_records):
+            past_prefix,past_idx = sorted_past_prefix_records[idx]
+            cur_len = i - past_idx
+            max_len = max(max_len,cur_len)
     return max_len
 print(longest_subarray_with_sum_lessthan_eq_k([2,2,-1],3))
         
