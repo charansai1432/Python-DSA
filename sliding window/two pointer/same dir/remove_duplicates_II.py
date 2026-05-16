@@ -37,3 +37,15 @@ print(remove_duplicates([1,1,1,2,2,3]))
 # Here the remove_duplicates atmost k problem 
 
             # have the formula like slow - k 
+            
+            
+            
+def remove_duplicates_II(arr):
+    slow = 2 
+    for fast in range(2,len(arr)):
+        if arr[fast] != arr[slow-2]:
+            arr[slow] = arr[fast]
+            slow+=1
+    # print(arr)
+    return slow
+print(remove_duplicates_II([1,1,1,2,2,3]))

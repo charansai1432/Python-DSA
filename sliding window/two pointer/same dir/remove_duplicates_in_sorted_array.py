@@ -25,3 +25,13 @@ def remove_duplicates_in_sorted_array(arr):
             
     return slow +1
 print(remove_duplicates_in_sorted_array([1,1,2,2,3]))
+
+
+def remove_duplicates_in_sorted_array(arr):
+    slow = 0
+    for fast in range(len(arr)):
+        if arr[fast] != arr[slow]:
+            slow += 1
+            arr[slow] = arr[fast]
+    return slow + 1,arr
+print(remove_duplicates_in_sorted_array([1,2,2,3,3,4,5]))

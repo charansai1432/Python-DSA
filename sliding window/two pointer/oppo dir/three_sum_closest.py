@@ -33,6 +33,8 @@ def three_sum_closest_sum(arr,target):
     arr.sort()
 
     for i in range(n-2):
+        if i > 0 and arr[i] == arr[i-1]:
+            continue
         l = i + 1
         r = n - 1
         while l < r:
