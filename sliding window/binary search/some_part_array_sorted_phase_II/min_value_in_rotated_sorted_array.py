@@ -25,9 +25,11 @@ def min_value_in_rotated_sorted_array(arr):
             break
         elif arr[l] <= arr[mid]:
             min_val = min(min_val,arr[l])
+            l = mid + 1
         
         elif arr[mid] <= arr[r]:
             min_val = min(min_val,arr[mid])
+            r = mid - 1
     return min_val
 print(min_value_in_rotated_sorted_array([0,1,2,3,4,4,5]))
 print(min_value_in_rotated_sorted_array([0,0,0,0,0]))

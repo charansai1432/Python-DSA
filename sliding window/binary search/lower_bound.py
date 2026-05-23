@@ -49,3 +49,5 @@ def lower_bound(arr,target):
             l= mid + 1
     return  ans
 print(lower_bound([1,3,3,5,8],4))
+
+
