@@ -21,6 +21,8 @@
 
 #  mid = answer = max_
 
+# here the search space could be from the l to r i.e ====> days from L to R like day-1 (L) to day-10(R)
+
 # optimal solution 
 
 def minimum_days_to_make_m_bouquets(bloomdays,m,k):
