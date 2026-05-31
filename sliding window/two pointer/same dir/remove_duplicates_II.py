@@ -40,12 +40,15 @@ print(remove_duplicates([1,1,1,2,2,3]))
             
             
             
-def remove_duplicates_II(arr):
-    slow = 2 
+def remove_duplicates_II(arr):          # here in this question we have to keep only unique elements
+    slow = 2                        # in this question the 1st two values are always unique 
+                                    #  so we start from the index = 2 for both slow and fast pointers 
     for fast in range(2,len(arr)):
-        if arr[fast] != arr[slow-2]:
-            arr[slow] = arr[fast]
+        if arr[fast] != arr[slow-2]:            # this is the standard formula to this question to remove the duplicates
+            
+            arr[slow] = arr[fast]           # as the 1st 2 elements are unique we can continue with the standard template 
+            
             slow+=1
     # print(arr)
-    return slow
+    return slow                         # slow which returns no.of unique values in an array , if arr is there we can able to return the entire uniq array
 print(remove_duplicates_II([1,1,1,2,2,3]))

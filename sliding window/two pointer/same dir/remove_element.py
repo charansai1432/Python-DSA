@@ -13,11 +13,11 @@ print(remove_element([3,2,2,3],3))
 
 # optimal solution approach 
 
-def remove_element(arr,val):
+def remove_element(arr,val):            # remove_element == > we have to keep elements other than that value 
     n = len(arr)
     slow = 0
     for fast in range(n):
-        if arr[fast] != val:
+        if arr[fast] != val:                # this condition gives the elements other than that value
             arr[slow] = arr[fast]
             slow +=1
     return  slow 

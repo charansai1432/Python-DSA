@@ -73,11 +73,17 @@ print(sort_colours([1,1,0,0,2,2]))
 
 ### optimal solution ###
 
+# dutch national flag question 
+# here the below problem {ALGORITHM} can only be solved using the dutch-national flag algo only 
+# {VVVIMP} ==> Here in this the input values has to be only {0,1,2} ==> other than this values the {ALGORITHM BREAKS}
+
 def sort_colors(arr):
+    
     low = 0
     mid = 0
     high = len(arr) - 1
-    while mid <= high:
+    
+    while mid <= high:                  
         if arr[mid] == 0:
             arr[low],arr[mid]=arr[mid],arr[low]
             low += 1
