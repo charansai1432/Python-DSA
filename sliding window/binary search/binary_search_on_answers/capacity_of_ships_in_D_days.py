@@ -2,7 +2,8 @@
 
 
 
-
+# this is a question 
+# we have to find the minimum days required for a ship to carry all weights 
 
 
 # optimal solution 
@@ -18,14 +19,15 @@ def capacity_of_ships_in_D_days(weights,D):
             else:
                 cur_load += weight
         return days_used <= D
-    l = max(weights)
-    r = sum(weights)
+    l = max(weights)                # here l pointer which gives the the max_weight a ship can carry at a time.
+    r = sum(weights)                    # a ship can carry all the weights at a time which gives the search space for that.
     answer = r
     while l <= r:
         mid = l + (r-l) // 2
         if possible(mid):
             answer = mid
-            r = mid - 1
+            r = mid - 1                     # minimum days took for a ship to carry => array is sorted move left side 
+            
         else:
             l = mid + 1
     return answer
