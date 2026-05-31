@@ -15,9 +15,9 @@ print(two_sum([2,7,11,15],9))       #[0,1]
 # optimal solution 
 
 def two_sum(arr,target):
-    freq = {}
+    freq = {}                           # in the freq map we store the past_sum , past_num or past_freq in the freq_map 
     n = len(arr)
-    for i,cur_num in enumerate(arr):
+    for i,cur_num in enumerate(arr):    
         past_num = target - cur_num
         if past_num in freq:
             return [freq[past_num],i]

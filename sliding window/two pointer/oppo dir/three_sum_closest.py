@@ -13,13 +13,13 @@
 def three_sum_closest_sum(arr,target):
     arr.sort()
     n = len(arr)
-    closest_sum = float('inf')
+    closest_sum = float('inf')              # the closest_sum is float('inf') i.e from a big value to small_value 
     for i in range(n):
         for j in range(i+1,n):
             for k in range(j+1,n):
                 total = arr[i] + arr[j] + arr[k]
                 
-                if abs(total - target) < abs(total - closest_sum):
+                if abs(total - target) < abs(total - closest_sum):          # remember this condition 
                     closest_sum = total 
     return closest_sum
 print(three_sum_closest_sum([-1,2,1,-1],1))             #2
@@ -33,14 +33,17 @@ def three_sum_closest_sum(arr,target):
     arr.sort()
 
     for i in range(n-2):
-        if i > 0 and arr[i] == arr[i-1]:
+        if i > 0 and arr[i] == arr[i-1]:            # to remove the duplicates 
             continue
+        
         l = i + 1
         r = n - 1
         while l < r:
+            
             total = arr[i]+arr[l]+arr[r]
 
             if abs(target - total) < abs(target - closest_sum):
+                
                 closest_sum = total
 
             if total < target:

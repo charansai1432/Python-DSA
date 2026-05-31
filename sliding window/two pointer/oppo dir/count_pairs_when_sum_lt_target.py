@@ -1,3 +1,8 @@
+
+#  this is the question we have to count the pairs where sum <= target ===> two pointer technique 
+
+# array is sorted , condition , pairs or triplet
+
 # brute force approach 
 
 def count_pairs_when_sum_lt_target(arr,target):
@@ -25,8 +30,8 @@ def count_pairs_when_sum_lt_target(arr,target):
     while l < r:
         cur_sum = arr[l] + arr[r]
         if cur_sum < target:
-            count += (r-l)
-            l += 1
+            count += (r-l)          # in the traditional variable Sw technique also we count like r - l +1 in the two pointer technique we use the r -l to count ==> count = (r-l)
+            l += 1                      # even after finding the pair we move the l += 1 because the next 'l' value can also from a pair or not to check we increase the 'l' pointer forward 
         else:
             r -= 1
     return count
