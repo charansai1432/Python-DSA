@@ -8,8 +8,16 @@
 
 # [1,10,3,10,2] ==> [day1,day2,day3] like that 
 
+# here like each element in the array represent a one flower 
+
+#{VVVVIMP}
+#  i.e length of bloomday is len(bloomday) = 5 i.e total no. of flowers avaiable is '5' 
+
 # you need the 'm' bouquets  => mini_days required to make 'm' bouquet's
 # each bouquet requires 'k' flowers
+
+#  k = require no. of flowers 
+# len(bloomday) = available flowers
 
 #  mid = answer = max_
 
