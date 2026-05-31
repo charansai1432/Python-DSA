@@ -25,16 +25,18 @@
 
 def minimum_days_to_make_m_bouquets(bloomdays,m,k):
     
-    n = len(bloomdays)
-    if m*k > n:
+    n = len(bloomdays)          # available no. of flowers currently 
+    
+    if m*k > n:                 # each bouquet has this many flowers if it is lessthan the available no. of flowers ==> return '-1'
         return -1
     
     def possible(min_days):               #  How many bouquets can I make using flowers that have bloomed by this day?
-        bouquets_possible = 0
-        flowers = 0 
+        
+        bouquets_possible = 0           # bouquets possible initially is '0'
+        flowers = 0                         # flowers isn't bloomed initially is '0'
         
         for bloom in bloomdays:
-            if bloom <= min_days:
+            if bloom <= min_days:           
                 flowers += 1
                 if flowers == k:
                     bouquets_possible += 1
