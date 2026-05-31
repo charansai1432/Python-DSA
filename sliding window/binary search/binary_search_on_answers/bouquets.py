@@ -5,7 +5,7 @@
 # flower 3 blooms on day 3
 # Flower 4 blooms on day 10
 # Flower 5 blooms on day 2
-
+# here the index represent the flower and value represent the days
 # [1,10,3,10,2] ==> [day1,day2,day3] like that 
 
 # here like each element in the array represent a one flower 
@@ -38,13 +38,16 @@ def minimum_days_to_make_m_bouquets(bloomdays,m,k):
         flowers = 0                         # flowers isn't bloomed initially is '0'
         
         for bloom in bloomdays:
-            if bloom <= min_days:           
-                flowers += 1
+            if bloom <= min_days:           # Has this flower bloomed by day X ? bloom = flower here and min_days = mid i.e is flower is bloomed in this days 
+                
+                flowers += 1            
                 if flowers == k:
                     bouquets_possible += 1
                     flowers = 0
+            
             else:
                 flowers = 0
+                
         return bouquets_possible >= m
     pass
 
