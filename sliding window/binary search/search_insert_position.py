@@ -19,7 +19,7 @@
 
 # Because 2 should be inserted at index 1.
 
-
+# here for this search insert postion question we can also use the in-built funtions like bisect_left to get the exact index where target can bbe inserted without changing the sorted
 
 # brute force approach 
 

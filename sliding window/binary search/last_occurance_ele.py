@@ -33,11 +33,13 @@ def last_occurance(arr,target):
     r = len(arr) - 1
     while l <= r:
         mid = l + (r-l)//2
-        if arr[mid] == target:
+        if arr[mid] == target:          
             ans = mid 
+            l = mid + 1        # and also here we are finding for the last_occurance of target we move the l = mid + 1
+            
+        elif arr[mid] < target:     # < target ==> l = mid + 1 
             l = mid + 1
-        elif arr[mid] < target:
-            l = mid + 1
+        
         else:
             r = mid - 1
     return ans

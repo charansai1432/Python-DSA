@@ -3,6 +3,10 @@
 
 # and for the ceil question the condition could be the >= 
 
+# for the floor question the formula is arr[mid] <= target that means the cur_mid_element is <= target then in generall what we will do if cur_ele is <= target we move the  l = mid + 1 because to increase  to the target element
+                         # if target is found => return ans = arr[mid]  to override that ans = -1 if no target found simple return -1 
+            
+
 # brute force approach 
 
 def floor_question(arr,target):

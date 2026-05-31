@@ -39,8 +39,8 @@ def first_occurance(arr,target):
     while l <= r:
         mid = l + (r-l)//2
         if arr[mid] == target:
-            ans = arr[mid]
-            r = mid - 1
+            ans = arr[mid]          
+            r = mid - 1                 # to get the first occurance of target we move the r = mid - 1 
         elif arr[mid] < target:
             l = mid + 1
         else:

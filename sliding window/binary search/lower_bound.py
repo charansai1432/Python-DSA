@@ -21,6 +21,8 @@
 # Because:
 # 5 is first element ≥ 4.
 
+#  for the lower bound ==> arr[mid] >= target ==> lower bound 
+# for the upper bound  ==> arr[mid] > target  ==> upper bound 
 
 # brute force approach 
 
