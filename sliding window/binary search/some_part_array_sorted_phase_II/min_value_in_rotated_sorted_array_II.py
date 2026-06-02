@@ -19,6 +19,7 @@ def min_value_in_rotated_sorted_array_II(arr):
     while l <= r:
         mid = l + (r-l)//2
         if arr[l] == arr[mid] == arr[r]:        # to handle the duplicates in the array if array having the duplicates and the l,r,mid having the same values then we cannot able to say the left half is sorted so we have to shirnk the array by the 'l' and 'r' pointer
+            min_val = min(min_val,arr[l])       #{VVVVIMP}        # if a single element is there in the array then l = m = r at that time the min_val is same like either we can written the mid or l or r 
             l += 1
             r -= 1
         
