@@ -1,4 +1,24 @@
 
+# brute force approach 
+
+def painter_partition(boards,painters):
+    l = max(boards)
+    r = sum(boards)
+    for min_work in range(l,r+1):
+        cur_painters = 1
+        cur_work = 0 
+        for board in boards:
+            if cur_work + board > min_work:
+                cur_painters += 1
+                cur_work = board
+            else:
+                cur_work += board
+        if cur_painters <= painters:
+            return min_work
+print(painter_partition([10,20,30,40],2))       #60
+
+
+
 
 
 # {VVVIMP} ==> here we are finding minimum_work can be assigned to a painter such that no painter can feel the burden of work 

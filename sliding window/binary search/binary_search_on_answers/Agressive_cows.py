@@ -1,4 +1,39 @@
+# brute force approach 
 
+def aggressive_cows_bruteforce(stalls, cows):
+
+    stalls.sort()
+
+    answer = 1
+
+    max_distance = stalls[-1] - stalls[0]
+
+    for distance in range(1, max_distance + 1):
+
+        cows_placed = 1
+
+        last_position = stalls[0]
+
+        for i in range(1, len(stalls)):
+
+            if stalls[i] - last_position >= distance:
+
+                cows_placed += 1
+
+                last_position = stalls[i]
+
+        if cows_placed >= cows:
+
+            answer = distance
+
+    return answer
+
+
+print(aggressive_cows_bruteforce([1,2,4,8,9], 3))      # 3
+
+# print(aggressive_cows_bruteforce([10,1,2,7,5], 3))     # 4
+
+# print(aggressive_cows_bruteforce([1,2,3,4,5], 2))      # 4
 
 
 #This is the question where in the previous questions we have seen that "F,F,F,T,T,T" pattern in the "COWS" question we can see the pattern "T,T,T,T,F,F,F,F"
@@ -44,4 +79,4 @@ def agressive_cows(stalls,cows):
     return answer
 print(agressive_cows([1, 2, 4, 8, 9],3))            #3
 
-print(agressive_cows( [10, 1, 2, 7, 5],3))          #9
+print(agressive_cows( [10, 1, 2, 7, 5],3))          #4

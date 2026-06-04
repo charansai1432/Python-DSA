@@ -1,3 +1,23 @@
+# brute force approach 
+
+def allocate_books(pages,s):
+    l = min(pages)
+    r = sum(pages)
+    for min_pages in range(l,r+1):
+        students = 1
+        cur_pages = 0
+        for page in pages:
+            if page + cur_pages > min_pages:
+                students += 1
+                cur_pages = page
+            else:
+                cur_pages += page
+        if students <= s:
+            return min_pages
+
+print(allocate_books([10,20,30,40],2))      #60
+
+
 
 # this is the question
 # the actual question says that the minimum pages to allocate a student such that no student can feel burden 
@@ -33,4 +53,4 @@ def Allocate_books(pages,S):
         else:
             l  = mid + 1
     return answer
-print(Allocate_books())
+print(Allocate_books([10,20,30,40],2))      #60

@@ -1,4 +1,50 @@
 
+# brute force approach 
+def bouquets_bruteforce(bloomDay, m, k):
+
+    if m * k > len(bloomDay):
+
+        return -1
+
+    left = min(bloomDay)
+
+    right = max(bloomDay)
+
+    for day in range(left, right + 1):
+
+        bouquets_possible = 0
+
+        flowers = 0
+
+        for bloom in bloomDay:
+
+            if bloom <= day:
+
+                flowers += 1
+
+                if flowers == k:
+
+                    bouquets_possible += 1
+
+                    flowers = 0
+
+            else:
+
+                flowers = 0
+
+        if bouquets_possible >= m:
+
+            return day
+
+    return -1
+
+
+print(bouquets_bruteforce([1,10,3,10,2], 3, 1))    # 3
+
+# print(bouquets_bruteforce([1,10,3,10,2], 3, 2))    # -1
+
+# print(bouquets_bruteforce([7,7,7,7,12,7,7], 2, 3)) # 12
+
 
 # flower 1 blooms on day 1
 # # flower 2 blooms on day 10 
@@ -67,7 +113,7 @@ def minimum_days_to_make_m_bouquets(bloomdays,m,k):
     return answer
     
     
-print(minimum_days_to_make_m_bouquets([1,10,3,10,2],3,1))
+print(minimum_days_to_make_m_bouquets([1,10,3,10,2],3,1))       #3
 
 # [1,10,3,10,2]  here actually the array says like the          {index = flower, value = day }
 # first flower blooms in day 1 

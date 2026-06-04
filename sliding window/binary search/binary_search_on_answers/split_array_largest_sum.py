@@ -1,3 +1,24 @@
+
+# brute force approach 
+
+def split_array_largest_sum(work,k):
+    l = max(work)
+    r = sum(work)
+    for max_largest_sum in range(l,r+1):
+        cur_sum = 0
+        group_needed = 1
+        for works in work:
+            if works+cur_sum > max_largest_sum:
+                group_needed += 1
+                cur_sum = works
+            else:
+                cur_sum += works
+        if group_needed <= k:
+            return max_largest_sum     
+
+print(split_array_largest_sum([7,2,5,10,8],2))      #18
+    
+
 # here in this question is actually like an ships,allocate books question only
  # the actual difference is the here arr = work to be assigned for the group of users
  # in a group no one worker should not exceed the max_work 
@@ -30,7 +51,7 @@ def split_array_largest_sum(work,k):
         else:
             l = mid + 1
     return answer
-print(split_array_largest_sum([7,2,5,10,8],2))
+print(split_array_largest_sum([7,2,5,10,8],2))          #18
     
     
     

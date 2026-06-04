@@ -1,4 +1,23 @@
+# brute force approach
 
+def capacity_of_ships_in_D_days(weights,D):
+    
+    l = max(weights)
+    r = sum(weights) 
+    for min_capacity in range(l,r+1):
+        days_used = 1
+        cur_load = 0
+        for weight in weights:
+            if cur_load + weight > min_capacity:
+                days_used += 1
+                cur_load = weight
+            else:
+                cur_load += weight
+        if days_used <= D:
+            return min_capacity
+
+print(capacity_of_ships_in_D_days([1,2,3,4,5,6,7,8,9,10],5))
+         
 
 
 
