@@ -132,4 +132,3 @@ print(minimum_days_to_make_m_bouquets([1,10,3,10,2],3,1))       #3
 # and also question says that in this days the flowers are bloomed are not {refer the above starting comments section here}
 
 
-
