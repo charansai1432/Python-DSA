@@ -1,4 +1,18 @@
 
+# pattern recognition 
+
+# Histogram Problem
+
+# For every bar:
+
+# Expand Left
+# Expand Right
+# Find Width
+# Find Area
+# Update Max Area
+
+
+
 # cheat sheet 
     # In the question 1st we have to assume the minimum height 
     # calcuate the next smaller and previous smaller element 
