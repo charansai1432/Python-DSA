@@ -1,5 +1,3 @@
-
-
 # optimal solution 
 
 class Treenode:
@@ -11,14 +9,19 @@ class Treenode:
 def balanced_tree(root):
     if root is None:
         return 0
+    
     l_height = balanced_tree(root.left)
-    if l_height == -1:
+    
+    if l_height == -1:                                            # return -1 which indicates that it's not a balanced tree 
         return -1
+    
     r_height = balanced_tree(root.right)
     if r_height == -1:
         return -1
+    
     if abs(l_height - r_height) > 1:
         return -1
+    
     # FIX: Return the actual height of this subtree to the parent
     return 1 + max(l_height, r_height)
     # if abs(l_height - r_height) == 1:
@@ -40,3 +43,13 @@ print(balanced)
 # he parent uses this number to check its own balance.
 
 # Job 2 (The Flag): If a subtree is unbalanced, it returns -1. The moment a parent sees -1, it stops calculating and just passes -1 all the way to the top.
+
+
+# if left == -1:
+#     return -1
+
+# Meaning:
+
+# My left subtree is already unbalanced.
+
+# So I don't need to continue.
