@@ -23,7 +23,7 @@ def balanced_tree(root):
         return -1
     
     # FIX: Return the actual height of this subtree to the parent
-    return 1 + max(l_height, r_height)
+    return 1 + max(l_height, r_height)                      # otherwise if the subtree all are valid balanced tree's then we have to calculate the height of subtree adn gives to it's cur_node to again validate for the next node in a entire tree.
     # if abs(l_height - r_height) == 1:
     #     return True 
     # return False
