@@ -6,16 +6,35 @@ class Treenode:
         self.left = None
         self.right = None
         
+# def path_sum(root,target_sum):
+#     if root is None:
+#         return False
+    
+#     target_sum -= root.val
+    
+#     if root.left is None and root.right is None:
+#         return target_sum == 0 
+    
+#     return (path_sum(root.left,target_sum) or path_sum(root.right,target_sum))
+
+
 def path_sum(root,target_sum):
+    
     if root is None:
-        return False
+        return 
     
     target_sum -= root.val
-    
+
     if root.left is None and root.right is None:
-        return target_sum == 0 
+        return target_sum == 0
     
-    return (path_sum(root.left,target_sum) or path_sum(root.right,target_sum))
+    
+    left_sum = path_sum(root.left,target_sum)
+    right_sum = path_sum(root.right,target_sum)
+    
+    return left_sum or  right_sum
+# print(path_sum(root,))
+    
 
 root = Treenode(5)
 root.left = Treenode(4)
