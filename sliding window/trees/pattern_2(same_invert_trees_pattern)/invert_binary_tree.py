@@ -37,6 +37,8 @@ def invert_tree(root):
     root.left,root.right = root.right,root.left
     invert_tree(root.left)
     invert_tree(root.right)
+    # left_side_invert = invert_tree(root.left)
+    # right_side_invert = invert_tree(root.right)
     return root
 
 # Helper function to print the tree so we can see it
