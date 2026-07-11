@@ -44,8 +44,12 @@ def same_tree(root1,root2):
     if root1.val != root2.val:
         return False
     
-    return same_tree(root1.left,root2.left) and same_tree(root1.right,root2.right)       
-      
+    # return same_tree(root1.left,root2.left) and same_tree(root1.right,root2.right)       
+    
+    left = same_tree(root1.left,root2.left)
+    right = same_tree(root1.right,root2.right)
+    return left and right   
+
 root1 = Treenode1(1)
 root1.left = Treenode1(2)
 root1.right = Treenode1(3)
