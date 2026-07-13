@@ -58,8 +58,8 @@ root.right.right = Treenode(8)
 
 # ---------------- Select Target Nodes ----------------
 
-p = root.left.right.left      # Node 7
+p = root.left.right.left      # Node 7      # assigning the target values p and  q like this in a tree
 
 q = root.left.right.right     # Node 4
 
-print(lowest_common_ancestor(root,p,q).val)
+print(lowest_common_ancestor(root,p,q).val)     #2
