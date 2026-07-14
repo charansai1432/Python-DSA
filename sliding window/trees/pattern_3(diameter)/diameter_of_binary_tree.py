@@ -27,9 +27,6 @@ def diameter_of_tree(root):
     return diameter
 
 
-
-
-
 print(diameter_of_tree(root))
 # here the inside function does 2 things 
     # 1. update the global answer 
