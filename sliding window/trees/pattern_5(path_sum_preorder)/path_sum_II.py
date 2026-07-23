@@ -24,7 +24,7 @@ root = Treenode(1)
 root.left = Treenode(2)
 root.right = Treenode(3)
 
-root.left.left = Treenode(10)
+root.left.left = Treenode(4)
 root.left.right = Treenode(5)
 
 root.right.left = Treenode(6)
