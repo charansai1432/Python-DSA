@@ -19,6 +19,8 @@ root.right.right = level_order_travarsal(7)
 def level_order_travarse(root):
     from collections import deque
     
+    if not root:            # if tree is empty ==> return the empty (according to question return okk)
+        return None
     queue = deque()
     
     queue.append(root)

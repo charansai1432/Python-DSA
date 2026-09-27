@@ -17,7 +17,8 @@ root.right.right = level_by_level_travarsal(7)
 def level_by_level_travarse(root):
     answer = []
     from collections import deque
-    
+    if not root:            #  tree is empty ==> just return the empty list (   edge case )
+        return answer 
     queue = deque()
     
     queue.append(root)
