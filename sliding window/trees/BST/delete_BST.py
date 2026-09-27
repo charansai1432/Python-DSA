@@ -42,3 +42,37 @@ def inorder(root):
     inorder(root.right)
 inorder(root)                   # 2 4 5 6 7 
 
+
+####################################### practicing again to remember#############
+
+def delete_BST(root,val):
+    
+    if root is None:
+        return None
+    
+    if val < root.val:
+        root.left = delete_BST(root.left,val)
+        
+    elif val > root.val:
+        root.right = delete_BST(root.right,val)
+    else:
+        if root.left is None:
+            return root.right
+        if root.right is None:
+            return root.left 
+        
+        
+        successor = root.right
+        while successor.left is not None:
+            successor = successor.left
+        root.val = successor.val
+        root.right = delete_BST(root.right,successor.val)
+        return root
+root = delete_BST(root,3)
+
+def inorder(root):
+    if root is None:return None
+    inorder(root.left)
+    print(root.val,end=" ")
+    inorder(root.right)
+inorder(root)
