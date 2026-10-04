@@ -37,5 +37,14 @@ def flatten_BT_to_LL(root):
             right_most_node.right = right_subtree
             
         root = root.right 
-    
-print(flatten_BT_to_LL(root))
+    return root
+flatten_BT_to_LL(root)
+
+# print flattened linked list
+def print_linked_list(node):
+    while node:
+        print(node.val, end=" -> ")
+        node = node.right
+    print("None")
+
+print_linked_list(root)
