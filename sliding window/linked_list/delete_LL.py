@@ -88,29 +88,31 @@ while current is not None:
 print("None")
 
 
-# delete a node after  a target 
+# delete a node that maatch the given the target 
 
 def delete_node_target(head,target):
     
-    if head is None:
+    if head is None:                    # empty linked list 
         return None
     
-    if head.data == target:
+    if head.data == target:         # if the cur_head has the target value we have to print the next elements right so return head.next 
         return head.next
     
-    current = head 
+    current = head              # 1st node in a linked list 
     
-    if current.next is None:
-        return head 
-    while current.next is not None and current.next.data != target:
+    
+    while current.next is not None and current.next.data != target:     # for example we have the elements 10-20-30-40-50 here => we have to delete the target node 
+                                        # current.next is not none => i.e we can proceed further and that current.next.val is not equal to target -> then we have to move the head pointer forward.
         current = current.next 
         
-    if current.next is None:
-        return head 
+    if current.next is None:                # means if given target node is not found in the linked list => we return the head 
+        return head                 # example 10-20-30 and target is 40 ====> after all the traversing we will reach to the node 30 and here our target is 40 which isn't there in the linked_list 
+                                            # here we have to write this if-condition {VVIMP - only after the while loop } ==> that helps us to know the target is not found and traversing in the entire linked_list (by while loop )
     
-    current.next = current.next.next 
-    return head 
-head = Node(10)
+    current.next = current.next.next        # actuall deletion logic 
+    
+    return head             # return the head 
+head = Node(10) 
 
 
 
