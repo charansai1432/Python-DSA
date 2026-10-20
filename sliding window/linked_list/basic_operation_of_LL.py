@@ -19,7 +19,7 @@ current = head
 
 arr =  [20,30,40,50]
 
-for i in range(1,len(arr)):
+for i in range(len(arr)):
     new_node = Node(arr[i])
     current.next = new_node
     current = current.next 
@@ -41,8 +41,10 @@ def insert_begin(head,val):
     new_node = Node(val)
     new_node.next = head 
     head = new_node
+    
+    return head 
  
-insert_begin(10,5)
+# insert_begin(10,5)
 
 
 
@@ -84,12 +86,13 @@ def insertion_after_node(head,target,val):
     
     new_node = Node(val)
     
-    if current is None:
-        return head 
     
-    while current.next is not None and current.data != target:
+    
+    while current is not None and current.data != target:       # here the current.next is not taken because we are actually taking the cur_node itself to compare with the target 
        current = current.next 
-       
+    
+    if current is None:             #This condition means we have reached the end of the linked list without finding the target.
+            return head                     #return head means return the reference to the first node of the linked list. It does not mean return the last node.
     new_node.next = current.next 
     
     current.next = new_node
@@ -98,6 +101,7 @@ def insertion_after_node(head,target,val):
 insertion_after_node(head, 20, 25)
 
 
+# print the linked list 
 def print_list(head):
     current = head
 
