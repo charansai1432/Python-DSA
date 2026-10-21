@@ -41,6 +41,9 @@ print("None")
 
 # ==> In traditional we will return the head right ==> here we return the previous because the cur_node.next is none and at that time previous points to cur_node i.e previous points to cur_node i.e pointer is at last node means previous so we return the return previous.
 
+print("\n")
+
+print("after reversing  a linked_list")
 def reverse_list(head):
     previous = None
     current = head 
