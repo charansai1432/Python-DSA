@@ -15,7 +15,7 @@ second.next = third
 third.next = fourth
 fourth.next = fifth
 
-fifth.next = third      # cycle starts at 30
+fifth.next = third     # cycle starts at 30
 
 
 
@@ -35,4 +35,8 @@ def cycle_LL_II(head):
             return slow   # we can also return the fast also because here we are finding the node where the both fast and slow pointer make an cycle i.e cycle starts 
     return None                 # if cycle exists just return the None
 answer = cycle_LL_II(head)
-print(answer.data)
+
+if answer is not None:
+    print(answer.data) 
+else:
+    print("None")
