@@ -24,6 +24,8 @@ print("None")
 # odd_even linked list 
 
 def odd_even_LL(head):
+    if head is None:        # if linked list is empty => then we cannot make the odd and even position to the result list ==> so simple return the None
+        return None 
     odd = head 
     even = head.next 
     even_head = even 
