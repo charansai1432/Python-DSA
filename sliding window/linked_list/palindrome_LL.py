@@ -24,10 +24,16 @@ print("None")
 
 
 # palindrome linked list 
+# palindrome means if we read the LL from the starting and ending it has to be same then its a palindrome other wise False
 
+# approach 
+# middle + divide the LL at middle position (slow) + reverse the second 2nd half + and comparing the two half values with each together 
+#  
 def palindrome_LL(head):
-    if head is None:
+    
+    if head is None:            # edge case 
         return True 
+    
     fast = slow = head 
     while fast.next is not None and fast.next.next is not None:
         slow = slow.next  

@@ -33,10 +33,21 @@ print_list(headB)
 
 ## intersection of two LL
 
+#  question is {we have to find the common node in the Two LL here that common node has to share the common memoy address {IMP} (not the node with the same value)}
+#  
+# approach  ---{standard}
+
+#  use the two pointers 
+#       - 'a' and 'b' --> in which a is not b => which tells us that 'a' node and 'b' node are not equal.
+#  if 'a' reaches none ==> it also has to scan the 2nd LL by making the a = headB .. same go's to the 2nd LL ==> b = headA
+# other wise we can simple move the pointer 
+#  return a or b (if common shared node present )
+
+
 def intersection_of_two_LL(headA,headB):
     a = headA
     b = headB 
-    while a is not b:
+    while a is not b:               # which tells us that In Python, is checks object identity (whether two variables point to the exact same object in memory).
         if a is None:
             a = headB 
         else:

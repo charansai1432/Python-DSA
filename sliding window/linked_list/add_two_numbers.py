@@ -16,7 +16,14 @@ l2 = ListNode(5)
 l2.next = ListNode(6)
 l2.next.next = ListNode(4)
 
+#  same as additino in the general math 
+#  we will add the element from the end of LL's 
+# and also we will return the answer from the end of result LL
+# {VVVIMP} refer the {notes} which i wrote the logic 
 
+
+# {VVVVVIMP} ==> if two linkedlists are given ==> and the final LL is in a single line format 
+#  then we have to use the dummy node ==> dummy node which helps main tain order 
 
 ## add two numbers in a linked list 
 
