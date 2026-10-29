@@ -1,14 +1,25 @@
-class Node:
-    def __init__(self,val):
-        self.val = val 
-        self.left = None 
-        self.right = None 
-        
-root = Node(5)
-root.left = Node(10)
-root.right = Node(8)
-root.left.left = Node(20)
-root.left.right = Node(15)
 
-def insertion_in_minheap(root):
+heap = [4, 7, 6, 12, 9]
+def insertion_in_minheap(heap,val):
+    
+    heap.append(val)
+    
+    i = len(heap) - 1 
+    
+    while i > 0:
+        
+        parent = (i-1)//2
+        
+        if heap[parent] <= heap[i]:
+            break 
+        
+        elif heap[parent] >= heap[i]:
+            heap[parent],heap[i] = heap[i],heap[parent]
+            
+        i = parent 
+    
+    return heap 
+print(insertion_in_minheap(heap,2))
+    
+    
     
