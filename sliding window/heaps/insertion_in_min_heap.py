@@ -20,6 +20,9 @@ def insertion_in_minheap(heap,val):
     
     return heap 
 print(insertion_in_minheap(heap,2))
+
+
+# this technique is called heapify-up technique
     
     
     

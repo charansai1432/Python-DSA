@@ -49,4 +49,9 @@ def deletion_in_min_heap(heap):
                                                                 # as in the question we have to move the down side we perform the i = smallest 
     return heap,minimum
 print(deletion_in_min_heap(heap))               #([16, 30, 20, 15, 10, 8], 50)
+
+
+
+
+# this technique is called the heapify down techquie
             
