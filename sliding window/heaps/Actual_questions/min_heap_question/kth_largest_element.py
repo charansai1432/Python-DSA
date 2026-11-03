@@ -36,8 +36,8 @@ def kth_largest_element(nums,k):
         if len(heap) > k:
             heapq.heappop(heap)
             
-    return heap[0]                  # where the kth largest element finds ... in the min_heap its the root 
+    return heap                # where the kth largest element finds ... in the min_heap its the root 
 
-nums = [3,2,1,5,6,4]
-k = 2 
+nums = [3, 2, 1, 5, 6, 4]
+k = 3
 print(kth_largest_element(nums,k))
