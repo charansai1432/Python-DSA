@@ -1,4 +1,4 @@
-nums = [1,1,1,2,2,3,4,]
+
 # the top k frequent elements in an array is a pattern of heap + hashmap 
 
 # top k elements --> i.e we have to main tain a window of k when it exceeds k we will pop the smallest element 
@@ -14,6 +14,7 @@ def top_k_frequent_elements(nums,k):
     
     from collections import Counter 
     freq = Counter(nums)
+    print(freq)
     heap = []
     import heapq
     for num in freq:
@@ -27,4 +28,5 @@ def top_k_frequent_elements(nums,k):
         freq , num = heapq.heappop(heap)
         result.append(num)
     return result
+nums = [1,1,1,2,2,3,4,]
 print(top_k_frequent_elements(nums,2))
