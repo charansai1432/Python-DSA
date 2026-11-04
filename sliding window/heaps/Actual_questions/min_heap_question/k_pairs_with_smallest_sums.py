@@ -4,6 +4,9 @@
 #  but here we aren't using the max_heap for this question 
 
 
+
+#  PATTERN APPROACH 
+
 #  we are using the min_heap for this question ==> we want to repeatedly retrieve the pair with the smallest sum.
 #   {VVVIMP} => A min_heap help's us to give the smallest sum first.
 
@@ -28,7 +31,7 @@
 
 #  after poping the elements ---> we have to insert the next pair from the same row .. (here same row is nothing but --> if we delete from the 1st element from nums1 then we have to insert nums1 index 0 element with the nums2 index 1 element we have to insert in to the heap)
 
-
+# {VVVIMP} These represent the core of the algorithm: pop → collect pair → move to the next pair in the same row.
 import heapq
 
 def k_pairs_with_smallest_sums(nums1, nums2, k):
@@ -122,3 +125,12 @@ nums2 = [2,4,6]
 k = 3
 
 print(k_pairs_small_sum(nums1,nums2,k))
+
+
+# 5. Complexity analysis
+# Let k be the number of pairs returned.
+# Complexity	Value
+# Time	(O(k log k))
+# Space	(O(k))
+
+# More precisely, the time is \(O(k \log(\min(k, |nums1|)))\) for the heap operations, plus the output space.
