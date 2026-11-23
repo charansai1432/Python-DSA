@@ -26,9 +26,27 @@
 # One traversal for each group of nodes that has not already been visited.
 
 
-def no_of_provinces(adjacency_matix):
+def no_of_provinces(adjacency_matrix):
     
-    pass
+    # bfs approach 
+    from collections import deque
+    queue = deque()
+    visited = [False]*len(adjacency_matrix)
+    provinces  = 0
+    for city in range(len(adjacency_matrix)):
+        if not visited[city]:
+            visited[city] = True 
+            queue.append(city)
+            
+            while queue:
+                current = queue.popleft()
+                
+                for neighbour in range(len(adjacency_matrix)):
+                    if not visited[neighbour]:
+                        visited[neighbour] = True 
+                        queue.append(neighbour)
+            provinces += 1
+    return provinces
     
 adjacency_matrix =  [
     [1, 1, 0],
@@ -36,3 +54,29 @@ adjacency_matrix =  [
     [0, 0, 1]
 ]
 print(no_of_provinces(adjacency_matrix))
+
+
+
+
+## DFS approach 
+
+def completed_province(adjacency_matrix):
+    provinces = 0 
+    n = len(adjacency_matrix)
+    visited = [False]*n
+    def dfs(city):
+        visited[city] = True 
+        for neighbour in range(n):
+            if not visited[neighbour]:
+                dfs(neighbour)
+        
+    for city in range(n):
+        if not visited[city]:
+            dfs(city)
+            provinces += 1 
+    return provinces
+print(completed_province(adjacency_matrix=[
+    [1, 1, 0],
+    [1, 1, 0],
+    [0, 0, 1]
+]))
