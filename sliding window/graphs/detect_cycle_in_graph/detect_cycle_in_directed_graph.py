@@ -102,4 +102,4 @@ def detect_cycle_in_directed_grap(adj):
     if processed < n:return True 
     else:
         return False 
-print(detect_cycle_in_directed_grap(adj=[[1, 2], [2], [3], []]))
+print(detect_cycle_in_directed_grap(adj=[[1,3],[0,2],[1,3],[0,2]]))

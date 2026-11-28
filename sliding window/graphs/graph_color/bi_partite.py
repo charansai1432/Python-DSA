@@ -72,9 +72,9 @@ def graph_bi_partite(adj):
             
             color[node] = 0 
             
-        if  dfs(node):
-           return True 
-    return False 
+        if  not dfs(node):
+           return False  
+    return True  
             
         
 print(graph_bi_partite(adj=[[1,3],[0,2],[1,3],[0,2]]))    
