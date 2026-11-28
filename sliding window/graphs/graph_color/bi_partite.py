@@ -43,5 +43,39 @@ def graph_bipartite(adj):
                     return False 
                 
         return True 
-print(graph_bipartite(adj=[[1,2,3],[0,2],[0,1,3],[0,2]]))
+# print(graph_bipartite(adj=[[1,2,3],[0,2],[0,1,3],[0,2]]))
 print(graph_bipartite(adj=[[1,3],[0,2],[1,3],[0,2]]))
+
+# DFS approach 
+def graph_bi_partite(adj):
+    n = len(adj)
+    
+    color =[-1]*n
+    
+    
+    def dfs(node):
+        # color[node] = 0 
+        
+        for neighbour in adj[node]:
+            
+            if color[neighbour] == -1:
+                color[neighbour] = 1  - color[node]
+                dfs(neighbour)
+            elif color[neighbour] == color[node]:
+                return False 
+        return True 
+    
+    
+    for node in range(n):
+        
+        if color[node] == -1:
+            
+            color[node] = 0 
+            
+        if  dfs(node):
+           return True 
+    return False 
+            
+        
+print(graph_bi_partite(adj=[[1,3],[0,2],[1,3],[0,2]]))    
+    
