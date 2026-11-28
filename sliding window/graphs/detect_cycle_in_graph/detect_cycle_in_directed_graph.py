@@ -61,8 +61,8 @@ print(detect_cycle_in_directed_graph(adj=[[1, 2], [2], [3], []]))
 #  Finally --> if the processed nodes != no. of vetex --> return True i.e cycle exists
 # other wise return False.
 
-#  here the question is directed graph i.e every node definately should be connected with the other node atleast '1' time ..
-#  that there is a cycle right 
+#  here the question is A directed graph can contain isolated vertices and vertices with no incoming or outgoing edges. Kahn's Algorithm handles these correctly.
+# that there is a cycle right 
 
 #  so we are poping out the nodes with the indegree value '0' --> because that means there is no incoming edge coming to that node.
 
