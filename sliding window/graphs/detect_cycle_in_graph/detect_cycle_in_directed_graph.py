@@ -79,7 +79,9 @@ def detect_cycle_in_directed_grap(adj):
     for node in range(n):
         for neighbour in adj[node]:
             indegree[neighbour] += 1
-            
+
+    
+    #  storing the nodes that are having the indegree = 0 
     for node in range(n):
         if indegree[node] == 0:
             queue.append(node)
@@ -93,6 +95,7 @@ def detect_cycle_in_directed_grap(adj):
         for neighbour in adj[node]:
             indegree[neighbour] -= 1 
             
+            #  storing the neighbours indegree value is '0' after decrementing the neighbour value by 1
             if indegree[neighbour] == 0:
                 queue.append(neighbour)
                 
